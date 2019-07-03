@@ -1,19 +1,19 @@
 <?php
 /**
  * wp-init.php
- * 
+ *
  * Copyright (c) "kento" Karim Rahimpur www.itthinx.com
- * 
+ *
  * This code is released under the GNU General Public License.
  * See COPYRIGHT.txt and LICENSE.txt.
- * 
+ *
  * This code is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * This header and all notices must be kept intact.
- * 
+ *
  * @author Karim Rahimpur
  * @package groups
  * @since groups 1.0.0
@@ -147,14 +147,14 @@ function _groups_get_tablename( $name ) {
 	/**
 	 * Filter the database table to query.
 	 *
-	 * @since 2.6.1
+	 * @since 2.7.2
 	 *
 	 * @param str $table_name The constructed table name.
 	 * @param str $name The requested short-form table name.
 	 * @param str $wpdb->prefix The current WordPress table prefix.
 	 * @return str $table_name The possibly-modified table name.
 	 */
-	return apply_filters( 'groups_database_name', $table_name, $name, $wpdb->prefix );
+	return apply_filters( 'groups_get_tablename', $table_name, $name, $wpdb->prefix );
 }
 
 /**
@@ -162,11 +162,11 @@ function _groups_get_tablename( $name ) {
  * is an administrator, otherwise false.
  * To enable admin override (AKA god mode for admins), add this to
  * your wp-config.php :
- * 
+ *
  * define( 'GROUPS_ADMINISTRATOR_OVERRIDE', true );
- * 
+ *
  * Enabling this is NOT recommended for production sites.
- * 
+ *
  * @param int $user_id indicate the user ID or omit to check for the current user
  * @return boolean
  */
