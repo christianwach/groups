@@ -152,14 +152,14 @@ function _groups_get_tablename( $name ) {
 	/**
 	 * Filter the database table to query.
 	 *
-	 * @since 2.6.1
+	 * @since 2.7.2
 	 *
 	 * @param str $table_name The constructed table name.
 	 * @param str $name The requested short-form table name.
 	 * @param str $wpdb->prefix The current WordPress table prefix.
 	 * @return str $table_name The possibly-modified table name.
 	 */
-	return apply_filters( 'groups_database_name', $table_name, $name, $wpdb->prefix );
+	return apply_filters( 'groups_get_tablename', $table_name, $name, $wpdb->prefix );
 }
 
 /**
